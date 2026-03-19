@@ -1,44 +1,50 @@
-from json.decoder import NaN
+# Desafios alura - OO
 
+# 1- Crie uma classe chamada ContaBancaria com um construtor que aceita os parâmetros titular e saldo.
+#Inicie o atributo ativo como False por padrão.
 
-class Musica:
-    def __init__(self, nome, artista, duracao=0):
-        self.nome = nome
-        self.artista = artista
-        self.duracao = duracao
+class ContaBancaria:
 
-class Carro:
-    def __init__(self, modelo, cor, ano):
-        self.modelo = modelo
-        self.cor = cor
-        self.ano = ano
-
-carro_bmw = Carro("BMW", "Preto", 2069)
-
-class Restaurante:
-    def __init__(self, nome, categoria, ano_criacao, nota):
-        self.nome = nome
-        self.categoria = categoria
+    def __init__(self, titular, saldo):
+        self.titular = titular
+        self.saldo = saldo
         self.ativo = False
-        self.ano_criacao = int(ano_criacao)
-        self.nota = int(nota)
+
+# 2 - Na classe ContaBancaria, adicione um método especial __str__ que retorna uma mensagem formatada com o titular e
+# o saldo da conta. Crie duas instâncias da classe e imprima essas instâncias.
+
+class ContaBancaria:
+
+    def __init__(self, titular, saldo):
+        self.titular = titular
+        self.saldo = saldo
+        self.ativo = False
+
     def __str__(self):
-        return f'{self.nome} {self.categoria}'
+        return f"Nome do titular: {self.titular}, Saldo em conta: {self.saldo}"
 
-restaurante_mexicano = Restaurante("Cacto", "Comida mexicana", 2069, 8)
+pessoa1 = ContaBancaria("Gustavo", 1000)
+pessoa2 = ContaBancaria("Breno", -1000)
+print(pessoa1)
+print(pessoa2)
 
-print(restaurante_mexicano)
+#  3 - Adicione um método de classe chamado ativar_conta à classe ContaBancaria que define o atributo ativo como True.
+# Crie uma instância da classe, chame o método de classe e imprima o valor de ativo.
 
-class Cliente:
-    def __init__(self, nome, idade, genero, tamanho_peniano_em_cm):
-        self.nome = nome
-        self.idade = int(idade)
-        self.genero = genero
-        self.tamanho_peniano_em_cm = tamanho_peniano_em_cm
+class ContaBancaria:
 
-cliente_roberto = Cliente("Roberto", 67, "Masculino", 27)
-cliente_ana = Cliente("Ana", 20, "Feminino", None)
-cliente_valdemar = Cliente("Valdemar", 19, "Masculino", 6)
+    def __init__(self, titular, saldo):
+        self.titular = titular
+        self.saldo = saldo
+        self.ativo = False
 
+    def __str__(self):
+        return f"Nome do titular: {self.titular}, Saldo em conta: {self.saldo}, Conta ativada: {self.ativo}"
 
+    @classmethod
+    def ativar_conta(cls, conta):
+        conta.ativo = True
 
+pessoa_1 = ContaBancaria("Breno", 1000,)
+ContaBancaria.ativar_conta(pessoa_1)
+print(pessoa_1)
