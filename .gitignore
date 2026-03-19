@@ -12,10 +12,7 @@ build/
 venv/
 
 # PyCharm
-.idea/misc.xml
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/shelf/
+.idea/
 
 # Claude Code
 .claude/
