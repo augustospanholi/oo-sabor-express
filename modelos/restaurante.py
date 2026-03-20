@@ -17,7 +17,7 @@ class Restaurante:
         print(f'{"Nome do restaurante".ljust(25)} | {"Categoria".ljust(25)} | Status')
 
         for restaurante in Restaurante.restaurantes:
-            print(f'{restaurante._nome.ljust(25)} | {restaurante._categoria.ljust(25)} | {restaurante.ativo}')
+            print(f'{restaurante._nome.ljust(25)} | {restaurante._categoria.ljust(25)} | {restaurante._ativo}')
 
 restaurante_madero = Restaurante("Madero", "Hamburgueria")
 restaurante_yume = Restaurante("Yume", "Japonesa")
