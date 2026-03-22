@@ -19,8 +19,13 @@ class Restaurante:
         print(
             f'{'Nome do restaurante'.ljust(25)} | {'Categoria'.ljust(25)} | {'Avaliação'.ljust(25)} |{'Status'}')
         for restaurante in cls.restaurantes:
-            print(
-                f'{restaurante._nome.ljust(25)} | {restaurante._categoria.ljust(25)} | {str(restaurante.media_avaliacoes).ljust(25)} |{restaurante.ativo}')
+            if restaurante.media_avaliacoes == 0:
+                print(
+                    f'{restaurante._nome.ljust(25)} | {restaurante._categoria.ljust(25)} | {"Sem avaliações".ljust(25)} |{restaurante.ativo}'
+                )
+            else:
+                print(f'{restaurante._nome.ljust(25)} | {restaurante._categoria.ljust(25)} | {str(restaurante.media_avaliacoes).ljust(25)} |{restaurante.ativo}')
+
 
     @property
     def ativo(self):
